@@ -20,16 +20,11 @@ import (
 
 func getTotalX(a []int32, b []int32) int32 {
     // Write your code here
-    var minOfA int32 = b[0];
     var minOfB int32 = b[0];
-    var maxOfA int32 = 0;
-    
+    var maxOfA int32 = a[0];
     for i:=0; i<len(a);i++{
         if (maxOfA<a[i]){
             maxOfA = a[i];
-        }
-        if(minOfA>a[i] && a[i]>1){
-            minOfA = a[i];
         }
     }
     for j:=0 ;j<len(b);j++{
@@ -37,29 +32,28 @@ func getTotalX(a []int32, b []int32) int32 {
             minOfB = b[j];
         }
     }
-    var canBeArray []int32;
-    var tempMin int32 = minOfA;
-    for tempMin<=minOfB{
-        if(tempMin>=maxOfA){
-        canBeArray = append(canBeArray, tempMin);
-        }
-        tempMin = tempMin*minOfA;
-    }
-    fmt.Println(canBeArray)
-    var count int32 = 0;
-    for i:=0;i<len(canBeArray);i++{
-        var temp int32 = 0
-        for j:=0;j<len(b);j++{
-            if(b[j]%canBeArray[i]==0){
-                temp++
+    
+    var array []int32;
+    
+    
+    for i:=maxOfA; i<=minOfB;i++{
+        var temp1 int32 = 0
+        for j:=0;j<len(a);j++{
+            if(i%a[j]==0){
+                temp1++;
             }
         }
-        if(temp == int32(len(b))){
-            count++;
+        var temp2 int32 = 0
+        for j:=0;j<len(b);j++{
+            if(b[j]%i==0){
+                temp2++;
+            }
+        }
+        if(temp1==int32(len(a)) && temp2==int32(len(b))){
+            array = append(array,i)
         }
     }
-    
-    return count;
+    return int32(len(array));
 }
 
 func main() {
