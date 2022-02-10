@@ -20,7 +20,17 @@ import (
 
 func matchingStrings(strings []string, queries []string) []int32 {
     // Write your code here
-
+    var result []int32;
+    for i:=0;i<len(queries);i++{
+        var count int32 = 0
+        for j:=0;j<len(strings);j++{
+            if(queries[i] == strings[j]){
+                count++
+            }
+        }
+        result = append(result,count);
+    }
+    return result;
 }
 
 func main() {
