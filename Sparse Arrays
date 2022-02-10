@@ -53,7 +53,7 @@ func main() {
         strings = append(strings, stringsItem)
     }
 
-    queriesCount, err := strconv.ParseInt(strings.TrimSpace(readLine(reader)), 10, 64)
+    queriesCount, err := strconv.ParseInt((readLine(reader)), 10, 64)
     checkError(err)
 
     var queries []string
