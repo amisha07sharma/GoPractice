@@ -20,7 +20,15 @@ import (
 
 func arrayManipulation(n int32, queries [][]int32) int64 {
     // Write your code here
-    
+    arr := make([]int32,n);
+    for i:=0;i<int(n);i++{
+        arr[i] = 0
+    }
+    for j:=0 ;j<len(queries);j++{
+        for k:=int(queries[j][0])-1;k<int(queries[j][1]);k++{
+            arr[k] += queries[j][2]
+        }
+    }
 }
 
 func main() {
