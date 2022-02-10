@@ -18,7 +18,21 @@ import (
  *  2. INTEGER_ARRAY arr
  */
 
-
+func rotateLeft(d int32, arr []int32) []int32 {
+    // Write your code here
+    if (d==0){
+        return arr;
+    }else{
+        var arr2 []int32;
+        for i:=d;i<int32(len(arr));i++{
+            arr2 = append(arr2,arr[i])
+        }
+        for i:=0;i<int(d);i++{
+            arr2 = append(arr2,arr[i])
+        }
+        return arr2
+    }
+}
 
 func main() {
     reader := bufio.NewReaderSize(os.Stdin, 16 * 1024 * 1024)
