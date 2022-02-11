@@ -45,7 +45,13 @@ func (singlyLinkedList *SinglyLinkedList) insertNodeIntoSinglyLinkedList(nodeDat
  * }
  *
  */
+func printLinkedList(head *SinglyLinkedListNode) {
+    for(head != nil){
+        fmt.Println(head.data)
+        head = head.next;
+    }
 
+}
 
 func main() {
     reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
