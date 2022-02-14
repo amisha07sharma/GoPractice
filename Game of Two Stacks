@@ -21,7 +21,39 @@ import (
 
 func twoStacks(maxSum int32, a []int32, b []int32) int32 {
     // Write your code here
-
+    var sum int32 = 0;
+    var count int32 = 0;
+    for sum<=maxSum{
+        var max int32 = a[0];
+        var min int32 = a[0];
+        if (max< b[0]){
+            max = b[0]
+        }
+        if(min > b[0]){
+            min = b[0]
+        }
+        if(max == a[0] && sum+max <= maxSum){
+            sum += max
+            a = a[1:]
+            count++
+        }else if(max == b[0] && sum+max <= maxSum){
+            sum += max
+            b = b[1:]
+            count++
+        }else if(min == b[0] && sum+min <= maxSum){
+            sum += min
+            b = b[1:]
+            count++
+        }else if(min == a[0] && sum+min <= maxSum){
+            sum += min
+            a = a[1:]
+            count++
+        }else{
+            break
+        }
+        fmt.Println(sum)
+    }   
+    return count;
 }
 
 func main() {
