@@ -28,23 +28,25 @@ func isBalanced(s string) string {
             case "[":
             stack = append(stack,"[")
             case ")":
-            if (stack[len(stack)-1] == "("){
+            if ((len(stack)>0) && stack[len(stack)-1] == "("){
                 stack = stack[:len(stack)-1]
             }else{
                 return "NO"
             }
             case "}":
-            if (stack[len(stack)-1] == "{"){
+            if ((len(stack)>0) && stack[len(stack)-1] == "{"){
                 stack = stack[:len(stack)-1]
             }else{
                 return "NO"
             }
             case "]":
-            if (stack[len(stack)-1] == "["){
+            if ((len(stack)>0) && stack[len(stack)-1] == "["){
                 stack = stack[:len(stack)-1]
             }else{
                 return "NO"
             }
+            default :
+            continue;
         }
     }
     if len(stack)==0{
