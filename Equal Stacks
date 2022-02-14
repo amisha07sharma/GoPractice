@@ -21,7 +21,41 @@ import (
 
 func equalStacks(h1 []int32, h2 []int32, h3 []int32) int32 {
     // Write your code here
-
+    var stack1 int32 = 0;
+    var stack2 int32 = 0;
+    var stack3 int32 = 0;
+    for i:=0;i<len(h1);i++{
+        stack1+=h1[i];
+    }
+    for i:=0;i<len(h2);i++{
+        stack2+=h2[i];
+    }
+    for i:=0;i<len(h3);i++{
+        stack3+=h3[i];
+    }
+    for((stack1 != stack2) || (stack2 != stack3)){
+        var max int32 = stack1;
+        if (max<stack2){
+            max = stack2
+        }
+        if (max<stack3){
+            max = stack3
+        }
+        fmt.Println(max)
+        if (max == stack1){
+            stack1 = stack1 - h1[0];
+            h1 = h1[1:];
+        }
+        if (max == stack2){
+            stack2 = stack2 - h2[0];
+            h2 = h2[1:];
+        }
+        if (max == stack3){
+            stack3 = stack3 - h3[0];
+            h3 = h3[1:];
+        }
+    }
+    return stack1;
 }
 
 func main() {
