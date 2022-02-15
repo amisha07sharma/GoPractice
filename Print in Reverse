@@ -67,15 +67,17 @@ func reversePrint(llist *SinglyLinkedListNode) {
     current,prev,next := llist, llist, llist
     prev = nil
     next = nil
-    for ((current!=nil)||(next!=nil)){
+    for ((current!=nil)){
         next = current.next
         current.next = prev
         prev = current
         current = next
+        fmt.Println(next.data)
     }
-    for (current!=nil){
-        fmt.Println(current.data)
-        current = current.next
+    
+    for (prev!=nil){
+        fmt.Println(prev.data)
+        prev = prev.next
     }
 }
 
