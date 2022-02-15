@@ -72,7 +72,6 @@ func reversePrint(llist *SinglyLinkedListNode) {
         current.next = prev
         prev = current
         current = next
-        fmt.Println(next.data)
     }
     
     for (prev!=nil){
