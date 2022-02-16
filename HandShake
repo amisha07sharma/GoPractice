@@ -18,7 +18,12 @@ import (
 
 func handshake(n int32) int32 {
     // Write your code here
-
+    var sum int32 = 0;
+    for n!=1{
+        sum+=(n-1)
+        n=n-1
+    }
+    return sum;
 }
 
 func main() {
