@@ -18,7 +18,14 @@ import (
  *  2. INTEGER area
  */
 
-
+func lowestTriangle(trianglebase int32, area int32) int32 {
+    // Write your code here
+    var height int32 = (area*2)/trianglebase;
+    if ((area*2)%trianglebase != 0){
+        height++;
+    }
+    return height;
+}
 
 func main() {
     reader := bufio.NewReaderSize(os.Stdin, 16 * 1024 * 1024)
