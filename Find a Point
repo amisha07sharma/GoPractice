@@ -22,7 +22,12 @@ import (
 
 func findPoint(px int32, py int32, qx int32, qy int32) []int32 {
     // Write your code here
-
+    dx := qx-px;
+    dy := qy-py;
+    rx := qx+dx;
+    ry := qy+dy
+    var array []int32 = []int32{rx,ry}
+    return array;
 }
 
 func main() {
