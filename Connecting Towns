@@ -18,7 +18,18 @@ import (
  *  2. INTEGER_ARRAY routes
  */
 
-
+func connectingTowns(n int32, routes []int32) int32 {
+    // Write your code here
+    var path int64 = 1;
+    for i:=0;i<len(routes);i++{
+        path *= int64(routes[i])
+        for (path>1234567){
+            path = path-1234567;
+        }
+    }
+    
+    return int32(path);
+}
 
 func main() {
     reader := bufio.NewReaderSize(os.Stdin, 16 * 1024 * 1024)
