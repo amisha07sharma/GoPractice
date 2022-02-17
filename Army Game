@@ -20,7 +20,7 @@ import (
 
 func gameWithCells(n int32, m int32) int32 {
     // Write your code here
-
+    return (((n+1)/2)*((m+1)/2));
 }
 
 func main() {
