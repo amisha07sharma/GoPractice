@@ -18,7 +18,18 @@ import (
 
 func primeCount(n int64) int32 {
     // Write your code here
-    
+    var primes []int32 = []int32{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53}
+
+  var p int32 = 1
+  var i int32 = 0
+  for i<16{
+    p*= primes[i]
+    if int(p) > int(n){
+      return i
+    }
+    i+= 1
+  }
+  return 0
 }
 
 func main() {
